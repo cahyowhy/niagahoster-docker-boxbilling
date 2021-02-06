@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  boxbilling:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8004:8004
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db:3306
+      DB_NAME: boxbilling
+      DB_USER: root
+      DB_PASS: root
+  db:
+    image: mysql:5.7
+    restart: always 
+    environment:
+      MYSQL_DATABASE: boxbilling
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3306:3306
+    volumes:
+      - ./sql/a_structure.sql:/docker-entrypoint-initdb.d/a_structure.sql
+      - ./sql/b_content.sql:/docker-entrypoint-initdb.d/b_content.sql
