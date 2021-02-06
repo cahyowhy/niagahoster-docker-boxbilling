@@ -1,0 +1,13 @@
+{
+    "name": "cahyowhy/niagahoster-test",
+    "description": "this is just how to use minimal php 7 rest",
+    "autoload": {
+        "psr-4": {
+            "NiagahosterTest\\": "src"
+        }
+    },
+    "require": {
+        "twig/twig": "^3.0",
+        "vlucas/phpdotenv": "^5.3"
+    }
+}

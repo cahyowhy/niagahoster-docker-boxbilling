@@ -24,3 +24,28 @@ services:
       - 3306:3306
     volumes:
       - ./database:/docker-entrypoint-initdb.d
+  landing_page:
+    build:
+      context: ./landing_page
+    ports:
+      - 8080:8080
+    depends_on:
+      - db_landing_page
+    environment:
+      DB_HOST: db_landing_page:3333
+      DB_NAME: niagahoster-test
+      DB_USER: root
+      DB_PASS: root
+  db_landing_page:
+    image: mysql:5.7
+    restart: always 
+    environment:
+      MYSQL_DATABASE: niagahoster-test
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_TCP_PORT: 3333
+    ports:
+      - 3333:3333
+    volumes:
+      - ./database_landing_page:/docker-entrypoint-initdb.d

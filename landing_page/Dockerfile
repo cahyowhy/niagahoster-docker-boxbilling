@@ -29,17 +29,11 @@ COPY config/php.ini /etc/php7/conf.d/custom.ini
 # Configure supervisord
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 # Setup document root
-RUN mkdir -p /var/www/html
-
-# download billingbox
-RUN  curl -LJO https://github.com/boxbilling/boxbilling/releases/download/4.21/BoxBilling.zip
-
-# ngko comment
-# COPY BoxBilling.zip /
-
-# extract billingbox
-RUN unzip -d /var/www/html BoxBilling.zip
+COPY app/ /var/www/html/
+RUN cd /var/www/html && composer dump-autoload && composer i
 
 # Make sure files/folders needed by the processes are accessable when they run under the nobody user
 RUN chown -R  nobody.nobody /var/www/html && \
@@ -48,12 +42,6 @@ RUN chown -R  nobody.nobody /var/www/html && \
     chown -R nobody.nobody /var/log/nginx
 
 RUN chmod -R go+rw /var/www/html
-
-# now prepare the bb data
-RUN cd /var/www/html && cp bb-config-sample.php bb-config.php
-
-# bb-config default url was localhost change to localhost:8004. so the asset and url won't 404
-RUN cd /var/www/html && awk '{gsub(/localhost/,"localhost:8004")}1' bb-config.php > temp.txt && mv temp.txt bb-config.php
 
 # Switch to use a non-root user from here on
 USER nobody

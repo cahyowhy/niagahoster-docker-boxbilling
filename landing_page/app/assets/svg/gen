@@ -1,0 +1,3 @@
+# some file svg if you render with these got blank output
+for i in *.svg;do rsvg-convert -w 256 -f png -o ../images/${i%.*}.png $i;done;
+for i in illustration-*.svg;do rsvg-convert -w 1024 -f png -o ../images/${i%.*}.png $i;done;

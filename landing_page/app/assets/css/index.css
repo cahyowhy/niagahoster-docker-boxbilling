@@ -1,0 +1,884 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(/assets/fonts/roboto/Roboto-Light.ttf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(/assets/fonts/roboto/Roboto-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(/assets/fonts/roboto/Roboto-Bold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(/assets/fonts/roboto/Roboto-LightItalic.ttf);
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(/assets/fonts/roboto/Roboto-Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(/assets/fonts/roboto/Roboto-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(/assets/fonts/montserrat/Montserrat-Light.otf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(/assets/fonts/montserrat/Montserrat-Bold.otf);
+    font-weight: 700;
+}
+
+body,
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: Roboto, BlinkMacSystemFont, -apple-system, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.ribbon {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.ribbon::before,
+.ribbon::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    display: block;
+    border: 5px solid #008138;
+}
+
+.ribbon span {
+    position: absolute;
+    display: block;
+    width: 225px;
+    padding: 15px 0;
+    background-color: #00B259;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    color: #fff;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.ribbon-top-left {
+    top: -10px;
+    left: -10px;
+}
+
+.ribbon-top-left::before,
+.ribbon-top-left::after {
+    border-top-color: transparent;
+    border-left-color: transparent;
+}
+
+.ribbon-top-left::before {
+    top: 0;
+    right: 0;
+}
+
+.ribbon-top-left::after {
+    bottom: 0;
+    left: 0;
+}
+
+.ribbon-top-left span {
+    right: -25px;
+    top: 30px;
+    transform: rotate(-45deg);
+}
+
+.nav-start {
+    padding: 8px 0;
+}
+
+.nav-start .info-content {
+    flex: 1;
+    position: relative;
+}
+
+.nav-start .info-content .icon-wrp {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    margin: -8px 8px 0 0;
+}
+
+.nav-start .info-content .icon-wrp i.fa-bookmark {
+    color: hsl(217, 71%, 53%);
+    font-size: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav-start .info-content .icon-wrp i.fa-tag {
+    color: white;
+    font-size: 12px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.nav-start .info-content .icon-wrp i {
+    position: absolute;
+}
+
+.nav-start .info-content p {
+    margin: 0;
+    flex: 1;
+}
+
+.nav-start .info-sec {
+    flex: none;
+    margin-left: 16px;
+}
+
+.nav-start,
+.main-nav,
+section.hero,
+.feature-price-sec {
+    border-bottom: 1px solid #eaeaea;
+}
+
+.nav-start .info-sec a,
+.nav-start .info-sec i {
+    color: #4a4a4a;
+}
+
+.nav-start .info-sec a:hover,
+.nav-start .info-sec a:hover i {
+    color: hsl(217, 71%, 53%);
+}
+
+.nav-start .info-sec a+a {
+    margin-left: 16px;
+}
+
+.nav-start .info-sec a i {
+    margin-right: 8px;
+}
+
+.main-nav .navbar-item img {
+    height: 50px;
+    width: auto;
+    max-height: none;
+}
+
+section.hero p,
+section.hero li {
+    font-family: 'Montserrat';
+}
+
+section.hero .hero-body {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+section.hero .info-hero li:not(:last-child),
+.info-support-laravel li:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+span.span-check {
+    background-color: #00b348;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+}
+
+span.span-check i {
+    color: white;
+    font-size: 13px;
+}
+
+.feature-price-sec .feature-lib,
+.feature-price-sec .info-pre-price,
+.feature-price-sec .info-feature-wrapper,
+.feature-price-sec .info-php-feautre,
+.feature-price-sec .info-support-laravel,
+.feature-price-sec .info-price,
+.need-help,
+.footer-sec,
+.feature-module-sec {
+    padding: 3rem 0;
+}
+
+.feature-price-sec .info-price .table-wrapper.is-best-seller {
+    position: relative;
+}
+
+.feature-price-sec .info-price .table-wrapper.is-best-seller tr:nth-child(-n+2),
+.feature-price-sec .info-price .table-wrapper.is-best-seller tr:nth-child(-n+2) td {
+    background-color: #008fee;
+}
+
+.feature-price-sec .info-price .table-wrapper.is-best-seller tr:nth-child(3),
+.feature-price-sec .info-price .table-wrapper.is-best-seller tr:nth-child(3) td {
+    background-color: #007fde;
+}
+
+.feature-price-sec .info-price .table-wrapper i.fa-star {
+    color: #007fde;
+}
+
+.feature-price-sec .info-price .table-wrapper tr:nth-child(-n+2) td {
+    font-family: 'Montserrat';
+}
+
+.feature-price-sec .info-price .table-wrapper.is-best-seller tr:nth-child(-n+3) td,
+.feature-price-sec .info-price .table-wrapper.is-best-seller tr:nth-child(-n+3) p,
+.feature-price-sec .info-price .table-wrapper.is-best-seller tr:nth-child(-n+3) strong {
+    color: white;
+}
+
+.feature-price-sec .info-price .price-disc {
+    text-decoration: line-through;
+}
+
+.feature-price-sec .info-price .price-final {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.feature-price-sec .info-price .price-final span:last-child {
+    margin-left: 4px;
+}
+.feature-price-sec .info-price .price-final span:first-child {
+    margin-right: 4px;
+}
+.feature-price-sec .info-price .price-final span {
+    margin-top: 5px;
+}
+
+.feature-price-sec .info-price .price-final strong.title.is-2 {
+    margin-top: -5px;
+}
+
+.feature-price-sec .info-price .price-final strong.title.is-4 {
+    margin-top: -1px;
+}
+
+.feature-price-sec .info-price .table-wrapper table {
+    text-align: center;
+}
+
+.feature-price-sec .info-price .table-wrapper.is-best-seller tr:nth-child(-n+3) td {
+    border: transparent;
+}
+
+.feature-price-sec .info-price .table-wrapper.is-best-seller table {
+    border-radius: 4px;
+    text-align: center;
+}
+
+.feature-price-sec .table-wrapper.is-best-seller table,
+.feature-price-sec .table-wrapper.is-best-seller tr:last-child
+.feature-price-sec .table-wrapper.is-best-seller tr:last-child td {
+    border-color: #008fee;
+}
+
+.feature-price-sec .info-price .table-wrapper table tr:last-child li+li {
+    margin-top: .75rem;
+}
+
+.feature-price-sec .info-price .table-wrapper table tr:nth-child(-n+3) td {
+    font-family: 'Montserrat';
+}
+
+.feature-price-sec .info-price .table-wrapper:not(.is-best-seller) .bt-wrp button {
+    border-width: 2px;
+    border-color: #4a4a4a;
+    font-family: 'Montserrat';
+}
+
+.feature-price-sec .info-price .table-wrapper.is-best-seller .bt-wrp button {
+    background-color: #008fee;
+}
+
+.feature-price-sec .info-price .table-wrapper .bt-wrp {
+    margin-top: 1.5rem;
+}
+
+.feature-price-sec .info-price .table-wrapper table tr:last-child td {
+    padding-bottom: 16px;
+    padding-top: 16px;
+}
+
+.feature-price-sec .info-price .table-wrapper {
+    flex: 1;
+}
+
+.feature-price-sec .info-price .table-wrapper table {
+    width: 100%;
+}
+
+.feature-price-sec .feature-lib .column {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-price-sec .info-pre-price p {
+    font-family: 'Montserrat';
+}
+
+.feature-price-sec .box-image {
+    width: 160px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.feature-price-sec .box-image img {
+    max-height: 160px;
+    width: auto;
+}
+
+.feature-price-sec .info-feature .box-image {
+    width: 128px;
+    height: 100;
+}
+
+.feature-price-sec .info-feature .box-image img {
+    max-height: 100;
+    width: auto;
+}
+
+.feature-price-sec .info-feature .feature-hosting .columns:first-child {
+    padding-bottom: 0.75rem;
+}
+
+.feature-price-sec .info-feature .feature-hosting .columns:last-child {
+    padding-top: 0.75rem;
+}
+
+.feature-price-sec .info-feature .feature-hosting .column {
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-price-sec .info-feature::before,
+.feature-price-sec .info-feature::after {
+    content: '';
+    margin: 0 auto;
+    position: relative;
+    width: 84px;
+    height: 4px;
+    background-color: #c4c4c4;
+    display: block;
+}
+
+.feature-price-sec .info-feature-wrapper .feature-hosting p,
+.feature-price-sec .info-feature-wrapper>p.subtitle.is-3 {
+    font-family: 'Montserrat';
+}
+
+.feature-price-sec .info-support-laravel p {
+    font-family: 'Montserrat';
+}
+
+.feature-price-sec .info-support-laravel ul {
+    margin-bottom: 1.5rem;
+}
+
+.feature-price-sec .info-support-laravel .column:last-child {
+    flex-grow: .6;
+    flex-shrink: .6;
+}
+
+.info-php-feautre>p.subtitle.is-3,
+.info-feature-wrapper>p.subtitle.is-3,
+.info-support-laravel>p.subtitle.is-3,
+.feature-module-sec>p.subtitle.is-3 {
+    margin-bottom: 3rem;
+}
+
+.feature-price-sec .info-php-feautre p.subtitle.is-3 {
+    font-family: 'Montserrat';
+}
+
+.feature-price-sec .info-php-feautre table td {
+    display: flex;
+}
+
+.feature-module-sec p.subtitle.is-3 {
+    font-family: 'Montserrat';
+}
+
+.feature-module-sec .bt-wrp,
+.last-sec .bt-wrp {
+    margin: 2rem 0 0;
+}
+
+.feature-module-sec button {
+    border-width: 2px;
+    border-color: #4a4a4a;
+}
+
+.last-sec .column:first-child {
+    padding: 3rem 1.5rem 3rem 0;
+}
+
+.last-sec .column:last-child {
+    background: url('/assets/images/image-support.png') no-repeat bottom left;
+    background-size: contain;
+}
+
+.share-sec {
+    background-color: #f7f7f7;
+}
+
+.share-sec .columns,
+.last-sec .columns {
+    margin: 0 !important;
+}
+
+.share-sec .icon-sec-wrp .soc-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.share-sec .icon-sec-wrp .soc-item+.soc-item {
+    margin-left: 16px;
+}
+
+.share-sec .icon-sec-wrp .soc-item span::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 7px;
+    width: 0;
+    height: 0;
+    clear: both;
+    border-right: 7px solid #c4c4c4;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+}
+
+.share-sec .icon-sec-wrp .soc-item span {
+    height: 30px;
+    width: 80px;
+    background-color: #c4c4c4;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #4a4a4a;
+}
+
+.share-sec .column:first-child {
+    padding: 1rem 1rem 1rem 0;
+}
+
+.share-sec .column:last-child {
+    padding: 1rem 0 1rem 1rem;
+}
+
+.share-sec .icon-sec-wrp .soc-item:first-child i {
+    color: #23599b;
+}
+
+.share-sec .icon-sec-wrp .soc-item:nth-child(2) i {
+    color: #00aef1;
+}
+
+.share-sec .icon-sec-wrp .soc-item:last-child i {
+    color: #fd6147;
+}
+
+.share-sec .icon-sec-wrp .soc-item i {
+    font-size: 30px;
+    margin-right: 16px;
+}
+
+.need-help {
+    background-color: #00a2f3;
+}
+
+.need-help p {
+    flex: 1;
+    margin-right: 8px;
+    padding-right: 8px;
+}
+
+.need-help .p-wrapper {
+    border-right: 1px solid #01b3fd;
+    margin-right: 32px;
+    padding-right: 32px;
+}
+
+.need-help button {
+    background-color: transparent;
+}
+
+.need-help p,
+.need-help p strong,
+.need-help button strong,
+.need-help button i {
+    color: white;
+}
+
+.need-help p {
+    font-family: 'Montserrat';
+}
+
+.need-help button i {
+    margin-right: 8px;
+}
+
+.need-help button {
+    border: 2px solid white;
+    margin-left: 8px;
+}
+
+.footer-sec {
+    background-color: #2f2f2f;
+}
+
+.footer-sec li a,
+.footer-sec .info-promo,
+.footer-sec .payment-method-info,
+.footer-sec .news-leter p.newsleter-title {
+    color: #c4c4c4;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.footer-sec li:first-child a,
+.footer-sec .payment-method p.payment-method-title,
+.footer-sec .newsleter-title {
+    text-transform: uppercase;
+    color: #8e8e8e;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.footer-sec li:first-child,
+.footer-sec .payment-method p.payment-method-title,
+.footer-sec .newsleter-title {
+    margin-bottom: 16px;
+}
+
+.footer-sec .form-wrapper {
+    background-color: white;
+    border-radius: 290486px;
+    align-items: center;
+    padding: 8px;
+}
+
+.footer-sec .form-wrapper button {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.footer-sec .form-wrapper input {
+    box-shadow: none;
+    border: none;
+    margin-left: 8px;
+}
+
+.footer-sec .social-footer {
+    align-items: center;
+    margin-left: 16px;
+}
+
+.footer-sec .social-footer a {
+    color: white;
+    border-radius: 50%;
+    height: 54px;
+    width: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+}
+
+.footer-sec .social-footer a+a {
+    margin-left: 24px;
+}
+
+.footer-sec .social-footer a span {
+    font-size: 18px;
+}
+
+.footer-sec .news-letter-action-wrp {
+    justify-content: flex-end;
+    margin-bottom: 16px;
+}
+
+.footer-sec .link-wrapper.is-flex img {
+    width: auto;
+    height: 25px;
+    -webkit-filter: grayscale(1);
+    -webkit-transition: all 0.3s;
+    filter: grayscale(1);
+    transition: all 0.3s;
+    margin: 0 30px 40px 0;
+    margin: 0 auto;
+}
+
+.footer-sec .payment-method {
+    padding-bottom: 24px;
+}
+
+.footer-sec .payment-method .link-wrapper a:hover img {
+    filter: none;
+}
+
+.footer-sec .link-wrapper a {
+    min-width: 100px;
+    text-align: center;
+}
+
+.footer-sec .news-letter-action-wrp .is-flex {
+    flex: 1;
+}
+
+.footer-sec .payment-method .link-wrapper a {
+    padding: 8px;
+    border-radius: 6px;
+    border: 2px solid #8e8e8e;
+}
+
+.footer-sec .payment-method .link-wrapper a+a {
+    margin-left: 16px;
+}
+
+.footer-sec .payment-method .payment-method-info {
+    margin-top: 16px;
+}
+
+.footer-sec .copyright-wrp {
+    justify-content: space-between;
+    border-top: 1px solid #1f1f1f;
+    padding-bottom: 0;
+    padding-top: 24px;
+}
+
+.footer-sec .copyright-wrp p,
+.footer-sec .copyright-wrp p a {
+    font-size: 13px;
+    color: white;
+    font-weight: 300;
+}
+
+.footer-sec .copyright-wrp p span {
+    margin: 0 8px;
+}
+
+.footer-sec .copyright-wrp p a:hover {
+    font-weight: bold;
+}
+
+@media only screen and (max-width:1024px) {
+    .hero-body .columns, 
+    .info-support-laravel .columns,
+    .feature-hosting .columns,
+    .footer-sec .columns.is-multiline,
+    .last-sec .columns,
+    .feature-module-sec .container .columns,
+    .info-php-feautre .columns,
+    .feature-lib.columns  {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: .75rem !important;
+    }
+
+    .hero-body img {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .feature-price-sec .info-price .is-flex, .nav-start .container, .hero-body .columns,
+    .payment-method .link-wrapper, .last-sec > .columns {
+        flex-wrap: wrap;
+    }
+    
+    .payment-method .link-wrapper {
+        margin: -8px;
+    }
+
+    .payment-method .link-wrapper a {
+        margin: 8px;
+    }
+
+    .navbar.main-nav, .nav-start {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .nav-start .info-sec {
+        margin: 16px 0 0;
+        width: 100%;
+    }
+    
+    .feature-price-sec .info-price > .is-flex {
+        padding: 0 .75rem;
+    }
+
+    .feature-price-sec .info-price .table-wrapper {
+        flex: none;
+        width: 50%;
+        margin-bottom: 16px;
+        padding: .75rem;
+    }
+
+    .feature-price-sec .feature-lib,
+    .feature-price-sec .info-pre-price,
+    .feature-price-sec .info-feature-wrapper,
+    .feature-price-sec .info-php-feautre,
+    .feature-price-sec .info-support-laravel,
+    .feature-price-sec .info-price,
+    .need-help,
+    .footer-sec,
+    .feature-module-sec {
+        padding: 1.5rem 0;
+    }
+
+    .last-sec > .columns > .column,
+    .hero-body .columns > .column,
+    .nav-start .info-content {
+        width: 100%;
+        flex: none;
+    }
+
+    .last-sec > .columns,
+    .last-sec .column:last-child {
+        padding-bottom: 0 !important;
+    }
+
+    .last-sec > .columns .column:first-child {
+        padding: 1.5rem;
+    }
+
+    .last-sec > .columns .column:last-child {
+        min-height: 400px;
+        background-position: center bottom;
+    }
+
+    .share-sec, .need-help {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .table-wrapper .ribbon {
+        top: 0;
+        left: 0;
+    }
+
+    .news-letter-action-wrp {
+        flex-direction: column;
+    }
+
+    .news-letter-action-wrp .form-wrapper,
+    .news-letter-action-wrp .social-footer {
+        flex: none;
+        width: 100%;
+    }
+
+    .news-letter-action-wrp .form-wrapper {
+        margin-bottom: 16px;
+    }
+
+    .news-letter-action-wrp .social-footer {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width:960px) {
+    .info-support-laravel .columns {
+        flex-wrap: wrap;
+    }
+
+    .info-support-laravel .columns .column img {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    
+    .info-support-laravel .columns .column {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:640px) {
+    .share-sec .column, .need-help .column {
+        padding: .75rem 0 !important;
+    }
+
+    .need-help .p-wrapper {
+        width: 100%;
+        margin: 0 0 1.5rem;
+        padding: 0;
+        border-right: 0;
+    }
+
+    .need-help button {
+        margin: 0;
+    }
+    
+    .need-help .container {
+        flex-wrap: wrap;
+    }
+    
+    .table-wrapper  {
+        width: 100% !important;
+    }
+
+    .info-pre-price p.title.is-2,
+    .info-pre-price p.subtitle.is-3,
+    .info-php-feautre p.subtitle.is-3,
+    .feature-module-sec p.subtitle.is-3,
+    .info-support-laravel p.subtitle.is-3,
+    .info-feature-wrapper p.subtitle.is-3 {
+        padding: 0 1.5rem;
+    }
+
+    .navbar.main-nav {
+        padding: 0 .75rem;
+    }
+    
+    .navbar.main-nav .navbar-brand {
+        align-items: center;
+    }
+}

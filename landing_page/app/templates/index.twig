@@ -1,0 +1,587 @@
+<html>
+	<head>
+		<title>
+			Niagahoster
+		</title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" href="/assets/css/index.css"/>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/>
+		<link rel="stylesheet" href="/assets/css/fontawesome.min.css"/>
+	</head>
+	<body>
+		<nav class="nav-start">
+			<div class="container is-widescreen is-flex">
+				<div class="info-content is-flex">
+					<div class="icon-wrp">
+						<i class="fas fa-bookmark"></i>
+						<i class="fas fa-tag"></i>
+					</div>
+					<p>
+						Gratis Ebook 9 Cara Cerdas Menggunakan Domain [x]
+					</p>
+				</div>
+				<div class="info-sec is-flex">
+					<a>
+						<i class="fas fa-phone"></i>
+						<span>0274-5305505</span>
+					</a>
+					<a>
+						<i class="fas fa-comment-alt"></i>
+						<span>Live Chat</span>
+					</a>
+					<a>
+						<i class="fas fa-user-alt"></i>
+						<span>Member Area</span>
+					</a>
+				</div>
+			</div>
+		</nav>
+		<nav class="navbar main-nav" role="navigation" aria-label="main navigation">
+			<div class="container is-widescreen">
+				<div class="navbar-brand">
+					<a href="#" class="navbar-item" href="https://bulma.io">
+						<img src="/assets/images/logo.png"/>
+					</a>
+
+					<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" 
+						data-target="navbar-menu" id="navbar-toggle">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</a>
+				</div>
+
+				<div id="navbar-menu" class="navbar-menu">
+					<div class="navbar-end">
+						<a href="#" class="navbar-item">Hosting</a>
+						<a href="#" class="navbar-item">Domain</a>
+						<a href="#" class="navbar-item">Server</a>
+						<a href="#" class="navbar-item">Website</a>
+						<a href="#" class="navbar-item">Afiliasi</a>
+						<a href="#" class="navbar-item">Promo</a>
+						<a href="#" class="navbar-item">Pembayaran</a>
+						<a href="#" class="navbar-item">Review</a>
+						<a href="#" class="navbar-item">Kontak</a>
+						<a href="#" class="navbar-item">Blog</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<section class="hero">
+			<div class="hero-body container is-widescreen">
+				<div class="columns">
+					<div class="info-hero column">
+						<p class="title is-2">
+							PHP Hosting
+						</p>
+						<p class="subtitle is-3">
+							Cepat, handal, penuh dengan modul PHP yang Anda butuhkan
+						</p>
+						<ul>
+							<li class="is-flex subtitle is-5">
+								<span class="span-check">
+									<i class="far fa-check"></i>
+								</span>
+								Solusi
+							</li>
+							<li class="is-flex subtitle is-5">
+								<span class="span-check">
+									<i class="far fa-check"></i>
+								</span>
+								Konsumsi
+							</li>
+							<li class="is-flex subtitle is-5">
+								<span class="span-check">
+									<i class="far fa-check"></i>
+								</span>
+								Support
+							</li>
+							<li class="is-flex subtitle is-5">
+								<span class="span-check">
+									<i class="far fa-check"></i>
+								</span>
+								Fitur
+							</li>
+						</ul>
+					</div>
+					<div class="column">
+						<img src="/assets/images/illustration-banner-hosting.png" alt="banner-php-hosting" class="image is-fullwidth"/>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="feature-price-sec">
+			<div class="container is-max-desktop">
+				<div class="columns feature-lib">
+					<div class="column is-flex is-flex-direction-column">
+						<div class="box-image">
+							<img class="image" src="/assets/images/icon-zendguard.png" alt="Zendguard"/>
+						</div>
+						<p class="has-text-centered">
+							PHP Zend Guard Loader
+						</p>
+					</div>
+					<div class="column is-flex is-flex-direction-column">
+						<div class="box-image">
+							<img class="image" src="/assets/images/icon-composer.png" alt="Composer"/>
+						</div>
+						<p class="has-text-centered">
+							PHP Composer
+						</p>
+					</div>
+					<div class="column is-flex is-flex-direction-column">
+						<div class="box-image">
+							<img class="image" src="/assets/images/icon-ioncube.png" alt="ionCube"/>
+						</div>
+						<p class="has-text-centered">
+							PHP ionCube Loader
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="container is-widescreen info-pre-price">
+				<p class="has-text-centered title is-2">
+					Paket Hosting Singapura yang Tepat
+				</p>
+				<p class="has-text-centered subtitle is-3">
+					Diskon 40% + Domain dan SSL Gratis untuk Anda
+				</p>
+			</div>
+			<div class="container is-widescreen info-price">
+				<div class="is-flex">
+					{% for price in prices %}
+						<div class="table-wrapper {{price.best_seller ? 'is-best-seller' : ''}}">
+							{% if price.best_seller %}
+								<div class="ribbon ribbon-top-left">
+									<span>BEST SELLER!</span>
+								</div>
+							{% endif %}
+							<table class="table is-bordered">
+								<tr>
+									<td class="title is-4">{{price.name}}</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="price-info-wrp">
+											{% if price.discount and price.discount != "0" %}
+												<p class="price-disc">
+													{{price.discount}}
+												</p>
+											{% endif %}
+											<p class="price-final">
+												<span>Rp</span>
+												{{price.price | raw}}
+												<span>/bln</span>
+											</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>{{price.total_usage}}</strong>
+										Pengguna Terdaftar</td>
+								</tr>
+								<tr>
+									<td>
+										{{price.features | raw}}
+										<div class="bt-wrp">
+											<button class="button {{price.best_seller ? 'is-info' : 'is-bordered'}} is-rounded">
+												<strong>Pilih Sekarang</strong>
+											</button>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="container is-max-desktop info-php-feautre">
+				<p class="subtitle is-3 has-text-centered">
+					Powerful dengan Limit PHP yang Lebih Besar
+				</p>
+				<div class="columns">
+					<div class="column">
+						<table class="table is-bordered is-striped is-hoverable is-fullwidth">
+							<tbody>
+								<tr>
+									<td>
+										<span class="span-check">
+											<i class="far fa-check"></i>
+										</span>
+										Max execution Time 300s
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="span-check">
+											<i class="far fa-check"></i>
+										</span>
+										Max execution Time 300s
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="span-check">
+											<i class="far fa-check"></i>
+										</span>
+										PHP Memory limit 1024 MB
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="column">
+						<table class="table is-bordered is-striped is-hoverable is-fullwidth">
+							<tbody>
+								<tr>
+									<td>
+										<span class="span-check">
+											<i class="far fa-check"></i>
+										</span>
+										Post Max Size 128 MB
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="span-check">
+											<i class="far fa-check"></i>
+										</span>
+										Upload Max File Size 128 MB 300s
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="span-check">
+											<i class="far fa-check"></i>
+										</span>
+										Max Input Vars 2500 MB
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="container is-widescreen info-feature">
+				<div class="info-feature-wrapper">
+					<p class="has-text-centered subtitle is-3">
+						Semua Paket Hosting Sudah Termasuk
+					</p>
+					<div class="feature-hosting">
+						<div class="columns">
+							<div class="column is-4 is-flex is-flex-direction-column">
+								<div class="box-image">
+									<img class="image" src="/assets/images/icon-php-allversion.png" alt="PHP All version"/>
+								</div>
+								<p class="title is-5 has-text-centered">
+									PHP Semua Versi
+								</p>
+								<p class="subtitle is-6 has-text-centered">
+									Pilih mulai dari versi PHP 5.3 s/d PHP 7.<br/>
+									Ubah Sesuka Anda!
+								</p>
+							</div>
+							<div class="column is-4 is-flex is-flex-direction-column">
+								<div class="box-image">
+									<img class="image" src="/assets/images/icon-hosting-mysql.png" alt="Hosting mysql"/>
+								</div>
+								<p class="title is-5 has-text-centered">
+									MySQL Versi 5.6
+								</p>
+								<p class="subtitle is-6 has-text-centered">
+									Nikmati MySQL versi terbaru, tercepat dan<br/>
+									kaya akan fitur
+								</p>
+							</div>
+							<div class="column is-4 is-flex is-flex-direction-column">
+								<div class="box-image">
+									<img class="image" src="/assets/images/icon-cpanel.png" alt="cpanel"/>
+								</div>
+								<p class="title is-5 has-text-centered">
+									Panel Hosting cPanel
+								</p>
+								<p class="subtitle is-6 has-text-centered">
+									Kelola website dengan panel canggih yang
+									<br/>
+									familiar di hati
+																																																																																																																																																																																																																																																																																																																																													                  Anda.
+								</p>
+							</div>
+						</div>
+
+						<div class="columns">
+							<div class="column is-4 is-flex is-flex-direction-column">
+								<div class="box-image">
+									<img class="image" src="/assets/images/icon-garansi.png" alt="cpanel"/>
+								</div>
+								<p class="title is-5 has-text-centered">
+									Garansi Uptime 99.9%
+								</p>
+								<p class="subtitle is-6 has-text-centered">
+									Data center yang mendukung kelangsungan
+									<br/>
+									website Anda 24/7.
+								</p>
+							</div>
+							<div class="column is-4 is-flex is-flex-direction-column">
+								<div class="box-image">
+									<img class="image" src="/assets/images/icon-innodb.png" alt="cpanel"/>
+								</div>
+								<p class="title is-5 has-text-centered">
+									Database InnoDB Unlimited
+								</p>
+								<p class="subtitle is-6 has-text-centered">
+									Jumlah dan ukuran databse yang tumbuh
+									<br/>
+									sesuai kebutuhan Anda.
+								</p>
+							</div>
+							<div class="column is-4 is-flex is-flex-direction-column">
+								<div class="box-image">
+									<img class="image" src="/assets/images/icon-remote-mysql.png" alt="cpanel"/>
+								</div>
+								<p class="title is-5 has-text-centered">
+									Wildcard Remote MySQL
+								</p>
+								<p class="subtitle is-6 has-text-centered">
+									Mendukung s/d 25 max_user_connections
+									<br/>
+									dan 100 max_user_connections.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container is-widescreen info-support-laravel">
+				<p class="subtitle is-3 has-text-centered">
+					Mendukung Penuh Framework Laravel
+				</p>
+				<div class="columns">
+					<div class="column">
+						<p class="subtitle is-5">
+							Tak perlu menggunakan dedicated server ataupun VPS yang mahal																																																																															              Anda
+						</p>
+
+						<ul>
+							<li class="is-flex subtitle is-5">
+								<span class="span-check">
+									<i class="far fa-check"></i>
+								</span>
+								<p>
+									Install
+									<strong>1 klik</strong>
+									dengan Softaculous Installer.
+								</p>
+							</li>
+							<li class="is-flex subtitle is-5">
+								<span class="span-check">
+									<i class="far fa-check"></i>
+								</span>
+								<p>
+									Mendukung
+									<strong>PHP MCrypt, phar, mbstring, json,</strong>
+									dan
+									<strong>
+										fileinfo.
+									</strong>
+								</p>
+							</li>
+							<li class="is-flex subtitle is-5">
+								<span class="span-check">
+									<i class="far fa-check"></i>
+								</span>
+								<p>Tersedia
+									<strong>Composer</strong>
+									dan
+									<strong>SSH</strong>
+									untuk menginstall</p>
+							</li>
+						</ul>
+
+						<p class="is-size-7 has-text-grey-light">
+							Nb. Composer dan SSH hanya tersedia pada paket Personal dan
+						</p>
+						<br/>
+						<button class="button is-rounded is-info">
+							Pilih Hosting Anda
+						</button>
+					</div>
+					<div class="column">
+						<img src="/assets/images/illustration-banner-support.png" alt="banner-support-hosting" class="image is-fullwidth"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="feature-module-sec">
+			<p class="subtitle is-3 has-text-centered">
+				Modul Lengkap untuk Menjalankan Aplikasi PHP Anda.
+			</p>
+			<div class="container is-max-desktop">
+				<div class="columns">
+					{% for secmodules in modules %}
+						<div class="column">
+							<ul>
+								{% for module in secmodules %}
+									<li>{{ module }}</li>
+								{% endfor %}
+							</ul>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="has-text-centered bt-wrp">
+				<button class="button is-rounded is-bordered">
+					<strong>Selengkapnya</strong>
+				</button>
+			</div>
+		</div>
+		<div class="last-sec container is-widescreen">
+			<div class="columns">
+				<div class="column is-6">
+					<p class="subtitle is-3">
+						Linux Hosting yang Stabil dengan Teknologi LVE
+					</p>
+					<p>
+						SuperMicro
+						<strong>Intel Xeon 24-Corese</strong>
+						server dengan RAM
+						<strong>
+							128 GB
+						</strong>
+						dan teknologi
+						<strong>LVE CloudLinux</strong>
+						untuk stabilitas
+						<strong>SSD</strong>
+						untuk kecepatan
+						<strong>
+							MySQL
+						</strong>
+						dan caching. Apache load balancer berbasi LiteSpeed Technologies,
+						<strong>CageFS</strong>
+						security,
+						<strong>Raid-10</strong>
+						protection
+					</p>
+					<div class="bt-wrp">
+						<a href="#" class="button is-info is-rounded">
+							<strong>Pilih Hosting Anda</strong>
+						</a>
+					</div>
+				</div>
+				<div class="column is-6"></div>
+			</div>
+		</div>
+		<div class="share-sec">
+			<div class="container is-widescreen">
+				<div class="columns">
+					<div class="column">
+						<p>
+							<strong>Bagikan jika Anda menyukai halaman ini.</strong>
+						</p>
+					</div>
+					<div class="column">
+						<div class="icon-sec-wrp is-flex">
+							<a href="#" class="soc-item">
+								<i class="fab fa-facebook"></i>
+								<span>80k</span>
+							</a>
+							<a href="#" class="soc-item">
+								<i class="fab fa-twitter"></i>
+								<span>450</span>
+							</a>
+							<a href="#" class="soc-item">
+								<i class="fab fa-google-plus-g"></i>
+								<span>1900</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="need-help">
+			<div class="container is-flex is-widescreen">
+				<div class="p-wrapper">
+					<p class="subtitle is-3">
+						Perlu
+						<strong>BANTUAN?</strong>
+						Hubungi Kami :
+						<strong>0274-53-55-5</strong>
+					</p>
+				</div>
+				<button class="button is-rounded">
+					<i class="fas fa-comment-alt"></i>
+					<strong>Lice Chat</span>
+				</button>
+			</div>
+		</div>
+		<div class="footer-sec">
+			<div class="container is-flex is-widescreen">
+				<div class="columns is-multiline">
+					{% for menus in footer_menus %}
+						<div class="column is-3">
+							<ul>
+								{% for menu in menus %}
+									<li>
+										<a href="#">{{ menu }}</a>
+									</li>
+								{% endfor %}
+							</ul>
+						</div>
+					{% endfor %}
+					<div class="column is-6 is-flex is-flex-direction-column">
+						<p class="newsleter-title">
+							Newsletter
+						</p>
+						<div class="is-flex news-letter-action-wrp">
+							<div class="form-wrapper is-flex">
+								<input type="text" class="input" placeholder="Email">
+								<button class="button is-info is-rounded">
+									Berlangganan
+								</button>
+							</div>
+							<div class="social-footer is-flex">
+								<a href="#">
+									<span class="fab fa-facebook-f"></span>
+								</a>
+								<a href="#">
+									<span class="fab fa-twitter"></span>
+								</a>
+								<a href="#">
+									<span class="fab fa-google-plus-g"></span>
+								</a>
+							</div>
+						</div>
+						<p class="info-promo">Dapatkan promo dan kontent menarik
+							<br>dari penyedia hosting terbaik Anda.</p>
+					</div>
+					<div class="column is-12 payment-method">
+						<p class="payment-method-title">Pembayaran</p>
+						<div class="link-wrapper is-flex">
+							{% for payment in payment_methods %}
+								<a href="#">
+									<img src="/assets/images/{{payment}}.png">
+								</a>
+							{% endfor %}
+						</div>
+						<p class="payment-method-info">Aktifasi instant dengan e-Payment dan domain langsung aktif</p>
+					</div>
+					<div class="column is-12 copyright-wrp is-flex">
+						<p>Copyright©2016 Niagahoster | Hosting powered by PHP7, CloudLinux, CloudFlare, BitNinja and DC Biznet Tehnovillage Jakarta
+							<br>
+							Cloud VPS Murah powered by Webuzo Softaculous, Intel SSD and cloud computing technology</p>
+						<p>
+							<a href="#">Syarat dan Ketentuan</a>
+							<span>|</span>
+							<a href="#">Kebijakan Privasi</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+		<script src="/assets/js/index.js"></script>
+	</body>
+</html>

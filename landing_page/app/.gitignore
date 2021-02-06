@@ -1,0 +1,5 @@
+vendor/
+.DS_Store
+cek.php
+.env
+*.sql
