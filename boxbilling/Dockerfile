@@ -33,10 +33,10 @@ COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 RUN mkdir -p /var/www/html
 
 # download billingbox
-RUN  curl -LJO https://github.com/boxbilling/boxbilling/releases/download/4.21/BoxBilling.zip
+# RUN  curl -LJO https://github.com/boxbilling/boxbilling/releases/download/4.21/BoxBilling.zip
 
 # ngko comment
-# COPY BoxBilling.zip /
+COPY BoxBilling.zip /
 
 # extract billingbox
 RUN unzip -d /var/www/html BoxBilling.zip

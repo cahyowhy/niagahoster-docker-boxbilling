@@ -1,0 +1,16 @@
+# still failed init db
+FROM mysql:5.7
+
+EXPOSE 3306 33060
+
+CMD ["mysqld"]
+
+ADD a_structure.sql /tmp/a_structure.sql
+ADD b_content.sql /tmp/b_content.sql
+RUN /bin/bash -c "/usr/bin/mysqld_safe --skip-grant-tables &" && \
+    sleep 5 && \
+    mysql -uroot -proot -e "DROP DATABASE IF EXISTS boxbilling" && \
+    mysql -uroot -proot -e "CREATE DATABASE boxbilling" && \
+    mysql -uroot -proot boxbilling < /tmp/a_structure.sql && \
+    mysql -uroot -proot boxbilling < /tmp/b_content.sql && \
+    echo "cek"

@@ -2,8 +2,7 @@ version: "3.9"
 services:
   boxbilling:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ./boxbilling
     ports:
       - 8004:8004
     depends_on:
@@ -24,5 +23,4 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./sql/a_structure.sql:/docker-entrypoint-initdb.d/a_structure.sql
-      - ./sql/b_content.sql:/docker-entrypoint-initdb.d/b_content.sql
+      - ./database:/docker-entrypoint-initdb.d
